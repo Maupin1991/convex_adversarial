@@ -3,6 +3,7 @@ import torch
 from torch import nn
 import os
 
+
 def create():
     class Flatten(nn.Module):
         def forward(self, x):
