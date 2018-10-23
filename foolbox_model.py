@@ -1,7 +1,7 @@
 import foolbox
 import torch
 from torch import nn
-
+import os
 
 def create():
     class Flatten(nn.Module):
@@ -18,7 +18,7 @@ def create():
         nn.ReLU(),
         nn.Linear(100, 10))
 
-    weights_path = 'models/mnist.pth'
+    weights_path = os.path.join(os.path.dirname(__file__), 'models/mnist.pth')
     weights = torch.load(weights_path, map_location='cpu')
     model.load_state_dict(weights)
 
