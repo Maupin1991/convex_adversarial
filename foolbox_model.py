@@ -23,5 +23,5 @@ def create():
     weights = torch.load(weights_path, map_location='cpu')
     model.load_state_dict(weights)
 
-    fmodel = foolbox.models.PyTorchModel(model, (0, 1), num_classes=10)
+    fmodel = foolbox.models.PyTorchModel(model, (0, 1))
     return fmodel
